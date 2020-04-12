@@ -36,9 +36,9 @@
     },
     "mysql": {
         "username": "root",
-        "password": "123456",
+        "password": "lwstar",
         "host": "127.0.0.1:3306",
-        "database": "game",
+        "database": "gamedata",
         "MaxOpenConns": 10,
         "MaxOdleConns": 0
     }
