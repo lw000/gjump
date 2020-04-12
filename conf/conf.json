@@ -1,0 +1,45 @@
+{
+    "servers": {
+        "debug":1,
+        "server":[
+            {
+                "listen":9100,
+                "servername": [],
+                "whitelist": [],
+                "blacklist": [],
+                "ssl": "off",
+                "ssl_certfile": "",
+                "ssl_keyfile": "",
+                "config": {
+                    "visitorLogin": true,
+                    "platform": "1",
+                    "agent": "93211410",
+                    "canal": "5000"
+                }
+            },
+            {
+                "listen":9101,
+                "servername": [],
+                "whitelist": [],
+                "blacklist": [],
+                "ssl": "off",
+                "ssl_certfile": "",
+                "ssl_keyfile": "",
+                "config": {
+                    "visitorLogin": true,
+                    "platform": "1",
+                    "agent": "14925874",
+                    "canal": "5001"
+                }
+            }
+        ]
+    },
+    "mysql": {
+        "username": "root",
+        "password": "123456",
+        "host": "127.0.0.1:3306",
+        "database": "game",
+        "MaxOpenConns": 10,
+        "MaxOdleConns": 0
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{.title}}</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script>
+		function foreach()
+		{
+			var strCookie=document.cookie;
+            console.log(strCookie);
+			var arrCookie=strCookie.split("; "); // 将多cookie切割为多个名/值对
+			for(var i=0;i <arrCookie.length;i++)
+			{ // 遍历cookie数组，处理每个cookie对
+				var arr=arrCookie[i].split("=");
+				console.log(arr[0]);
+				if(arr.length>0)
+				DelCookie(arr[0]);
+			}
+			window.location.reload()
+		}
+		
+		function GetCooki(offset)	 
+		{
+			var endstr = document.cookie.indexOf (";", offset);
+			if (endstr == -1)
+			endstr = document.cookie.length;
+			return decodeURIComponent(document.cookie.substring(offset, endstr));
+		}
+		
+		function DelCookie(name)
+		{
+			var exp = new Date();
+			exp.setTime (exp.getTime() - 1);
+			var cval = GetCookie (name);
+          cval = null;
+			document.cookie = name + "=" + cval + "; expires="+ exp.toGMTString();
+		}
+
+		function GetCookie(name)
+		{
+			var arg = name + "=";
+			var alen = arg.length;
+			var clen = document.cookie.length;
+			var i = 0;
+			while (i < clen)
+			{
+				var j = i + alen;
+				if (document.cookie.substring(i, j) == arg)
+				return GetCooki (j);
+				i = document.cookie.indexOf(" ", i) + 1;
+				if (i == 0) break;
+			}
+			return null;
+		}
+</script>
+</head>
+<body>
+<p  style="text-align: center;font-size: 48px"><a href="javascript:;" onclick="foreach()">{{.msg}}</a></p>
+</body>
+</html>

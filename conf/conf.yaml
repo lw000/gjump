@@ -1,0 +1,22 @@
+#端口配置
+port: 9098
+
+#调试模式
+debug: 1
+
+#启用https
+enableTLS: true
+
+#tls证书和key配置
+tls:
+    certFile: crs/server.crt
+    keyFile: crs/server.key
+
+#redis配置
+redis:
+    host: 192.168.1.201
+    port: 6379
+    psd: 123456
+    db: 6
+    poolSize: 20
+    minIdleConns: 5
