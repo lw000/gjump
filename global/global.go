@@ -48,7 +48,7 @@ func configLocalFilesystemLogger(logPath string, logFileName string, maxAge time
 
 // LoadGlobalConfig 加载工程全局配置
 func LoadGlobalConfig() error {
-	configLocalFilesystemLogger("log", "tweb", time.Hour*24*365, time.Hour*24)
+	configLocalFilesystemLogger("log", "gjump", time.Hour*24*365, time.Hour*24)
 
 	var err error
 	ProjectConfig, err = config.LoadJSONConfig("conf/conf.json")
